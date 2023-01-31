@@ -1,4 +1,26 @@
 ---
+
+const pgTitle = "About Page info";
+
+const id = 		{
+  							firstName: "Sarah",
+  								country: "Canada",
+  						 occupation: "Technical Writer",
+  								hobbies: ["photography","birdwatching","baseball"],
+						};
+
+const skills = 		[	"HTML", 
+										"CSS", 
+										"JavaScript", 
+										"React", 
+										"Astro", 
+										"Writing Docs"
+								];
+
+const happy 		= 	true;
+const finished 	= 	false;
+const goal 			= 	3;
+
 ---
 
 <html lang="en">
@@ -7,23 +29,55 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pgTitle}</title>
 	</head>
 	<body>
-		<h1>***********************</h1>
-		<h1>*** A testing Astro site ***</h1>
-		<h1>***********************</h1>
+		<h1>********************************</h1>
+		<h1>***   Initial Astro Tutorial Project   ***</h1>
+		<h1>********************************</h1>
+    <h1>{pgTitle}</h1>
+		<h1>---------------------------------------------------</h1>
+    <h1>Information - The about reference page</h1>
+		<h1>---------------------------------------------------</h1>
     <h1></h1>
-    <h1>Astro Modifications</h1>
-    <h1></h1>
-    <h1>My Astro Site</h1>
-    <h1>About Me and the Astro tutorial</h1>
+    <p>Here are a few facts about me:</p>
+		<ul>
+  			<li>My name is {id.firstName}.</li>
+  <li>I live in {id.country} and I work as a {id.occupation}.</li>
+  {id.hobbies.length >= 2 && 
+    <li>Two of my hobbies are: {id.hobbies[0]} and {id.hobbies[1]}</li>
+  } 
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+
+	{		happy && 
+						<p>I am happy to be learning Astro!</p>
+	}
+
+	{		finished  && 
+								<p>I finished this tutorial!</p>
+	}
+
+	{		goal === 3 ? 
+								<p>My goal is to finish in 3 days.</p> : <p>My goal is not
+								3 days.</p>
+	}
+
+
+    <h1>An About Page</h1>
+    <h1>Catalogging Progress of the Astro tutorial</h1>
     <h2>... and my new Astro site!</h2>
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+  <p>Working through Astro's introductory tutorial. 
+	Located at : https://docs.astro.build/en/tutorial/0-introduction/1/
+	The section on adding an about page.</p>
 
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-
+  <p>During the progression of this tutorial the site will be updated regularly. Continue to check periodically as sections are completed.
+	</p>
+	<h1></h1>
   <a href="/">Home</a>
   <a href="/blog/">Blog</a>
 	</body>
